@@ -1,4 +1,4 @@
-WITH data
+WITH leaderboard
 AS
 (
     SELECT challenges.hacker_id, 
@@ -12,7 +12,7 @@ AS
 SELECT hacker_id,
     name,
     counter
-FROM data
-WHERE counter=(SELECT max(counter) FROM data) 
-OR counter in (SELECT counter FROM data GROUP BY counter HAVING count(counter)=1)
+FROM leaderboard
+WHERE counter=(SELECT MAX(counter) FROM leaderboard) 
+OR counter IN (SELECT counter FROM leaderboard GROUP BY counter HAVING count(counter)=1)
 ORDER BY counter desc, hacker_id;

@@ -18,5 +18,5 @@ jobs:
         run: echo "::set-output name=test_name::${{ github.actor }}"
   Output-Test:
     runs-on: ubuntu-latest
-      steps:
-        - run: echo "$ {{ jobs.Explore-GitHub-Actions.outputs }}"
+    steps:
+      - run: echo "$ {{ jobs.Explore-GitHub-Actions.outputs }}"

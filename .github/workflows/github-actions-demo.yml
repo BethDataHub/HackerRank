@@ -16,7 +16,6 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - name: Set output
         run: echo "::set-output name=test_name::${{ github.actor }}"
-      - run: echo "$test_name"
   Output-Test:
     runs-on: ubuntu-latest
       steps:

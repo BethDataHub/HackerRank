@@ -16,9 +16,6 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      - name: Set output
+      - name: Set-output
         run: echo "::set-output name=test_name::${{ github.actor }}"
-  Output-Test:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "$ {{ jobs.Explore-GitHub-Actions.outputs }}"
+      - run: echo "$ {{ steps.Set-output.outputs.test_name }}"

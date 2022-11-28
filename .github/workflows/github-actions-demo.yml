@@ -16,5 +16,5 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      -name: Set output
-      run: echo "::set-output name=test_name::${{ github.actor }}"
+      - name: Set output
+        run: echo "::set-output name=test_name::${{ github.actor }}"

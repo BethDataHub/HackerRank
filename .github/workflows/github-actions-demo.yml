@@ -1,6 +1,8 @@
+name: "This is a test"
+on: [push]
+
 jobs:
   Explore-GitHub-Actions:
-    on: [push]
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
@@ -17,7 +19,6 @@ jobs:
       - name: Set output
         run: echo "::set-output name=test_name::${{ github.actor }}"
   Output-Test:
-    on: [push]
     runs-on: ubuntu-latest
     steps:
       - run: echo "$ {{ jobs.Explore-GitHub-Actions.outputs }}"
